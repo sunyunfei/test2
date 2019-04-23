@@ -1,0 +1,20 @@
+PODS:
+  - mob_smssdk (3.2.3):
+    - MOBFoundation
+  - MOBFoundation (3.2.2)
+
+DEPENDENCIES:
+  - mob_smssdk
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - mob_smssdk
+    - MOBFoundation
+
+SPEC CHECKSUMS:
+  mob_smssdk: cdb6a31d4fd4667ed928e2eca03f21ad89ebc05c
+  MOBFoundation: b5ff4038ddb9a0f06b685b86408f905a10aa147c
+
+PODFILE CHECKSUM: ea17588f2f085a1b059b99d17bc8180cc3185fad
+
+COCOAPODS: 1.6.0
