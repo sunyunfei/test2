@@ -1,0 +1,15 @@
+//
+//  PrefixHeader.pch
+//  Record
+//
+//  Created by 涂欢 on 2019/4/23.
+//  Copyright © 2019 syf. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import "MBProgressHUD.h"
+#import "Tool.h"
+#import "Common.h"
+#import "UserConfig.h"
+#endif /* PrefixHeader_pch */

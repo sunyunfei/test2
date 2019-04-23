@@ -8,12 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		05442C2C226ED10E00814A6A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 05442C2B226ED10E00814A6A /* AppDelegate.m */; };
-		05442C2F226ED10E00814A6A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05442C2E226ED10E00814A6A /* ViewController.m */; };
 		05442C32226ED10E00814A6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05442C30226ED10E00814A6A /* Main.storyboard */; };
 		05442C34226ED11000814A6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 05442C33226ED11000814A6A /* Assets.xcassets */; };
 		05442C37226ED11000814A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05442C35226ED11000814A6A /* LaunchScreen.storyboard */; };
 		05442C3A226ED11000814A6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05442C39226ED11000814A6A /* main.m */; };
 		05442C4E226ED41000814A6A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05442C4D226ED41000814A6A /* libz.tbd */; };
+		20069DD4226EF66D00B6916E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DD3226EF66D00B6916E /* LoginVC.m */; };
+		20069DD8226EF88400B6916E /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DD7226EF88400B6916E /* Tool.m */; };
+		20069DDB226F004F00B6916E /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DDA226F004F00B6916E /* Common.m */; };
+		20069DDF226F03F400B6916E /* UserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DDE226F03F400B6916E /* UserConfig.m */; };
+		20069DE4226F0E9E00B6916E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DE3226F0E9E00B6916E /* HomeViewController.m */; };
 		8902E6904780CD8798594FF7 /* libPods-Record.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF19B370D7A8E14ACFBEC6DD /* libPods-Record.a */; };
 /* End PBXBuildFile section */
 
@@ -21,8 +25,6 @@
 		05442C27226ED10E00814A6A /* Record.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Record.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		05442C2A226ED10E00814A6A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		05442C2B226ED10E00814A6A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		05442C2D226ED10E00814A6A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		05442C2E226ED10E00814A6A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		05442C31226ED10E00814A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		05442C33226ED11000814A6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		05442C36226ED11000814A6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -30,6 +32,17 @@
 		05442C39226ED11000814A6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		05442C4D226ED41000814A6A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0BBBF8EC3E74A232BBC4B188 /* Pods-Record.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.release.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.release.xcconfig"; sourceTree = "<group>"; };
+		20069DD2226EF66D00B6916E /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		20069DD3226EF66D00B6916E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		20069DD6226EF88400B6916E /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
+		20069DD7226EF88400B6916E /* Tool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tool.m; sourceTree = "<group>"; };
+		20069DD9226F004F00B6916E /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		20069DDA226F004F00B6916E /* Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		20069DDC226F015900B6916E /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		20069DDD226F03F400B6916E /* UserConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserConfig.h; sourceTree = "<group>"; };
+		20069DDE226F03F400B6916E /* UserConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserConfig.m; sourceTree = "<group>"; };
+		20069DE2226F0E9E00B6916E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		20069DE3226F0E9E00B6916E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		E320D49030B670E13C56E3D0 /* Pods-Record.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.debug.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.debug.xcconfig"; sourceTree = "<group>"; };
 		EF19B370D7A8E14ACFBEC6DD /* libPods-Record.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Record.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -68,25 +81,22 @@
 		05442C29226ED10E00814A6A /* Record */ = {
 			isa = PBXGroup;
 			children = (
-				05442C41226ED3C500814A6A /* Tools */,
+				20069DE1226F0E8200B6916E /* SetUp */,
+				20069DE0226F0E7C00B6916E /* HomePage */,
+				20069DD5226EF86800B6916E /* Tool */,
+				20069DD1226EF65800B6916E /* Login */,
 				05442C2A226ED10E00814A6A /* AppDelegate.h */,
 				05442C2B226ED10E00814A6A /* AppDelegate.m */,
-				05442C2D226ED10E00814A6A /* ViewController.h */,
-				05442C2E226ED10E00814A6A /* ViewController.m */,
 				05442C30226ED10E00814A6A /* Main.storyboard */,
 				05442C33226ED11000814A6A /* Assets.xcassets */,
 				05442C35226ED11000814A6A /* LaunchScreen.storyboard */,
 				05442C38226ED11000814A6A /* Info.plist */,
 				05442C39226ED11000814A6A /* main.m */,
+				20069DD9226F004F00B6916E /* Common.h */,
+				20069DDA226F004F00B6916E /* Common.m */,
+				20069DDC226F015900B6916E /* PrefixHeader.pch */,
 			);
 			path = Record;
-			sourceTree = "<group>";
-		};
-		05442C41226ED3C500814A6A /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tools;
 			sourceTree = "<group>";
 		};
 		05442C4C226ED40F00814A6A /* Frameworks */ = {
@@ -98,13 +108,48 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		20069DD1226EF65800B6916E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				20069DD2226EF66D00B6916E /* LoginVC.h */,
+				20069DD3226EF66D00B6916E /* LoginVC.m */,
+				20069DDD226F03F400B6916E /* UserConfig.h */,
+				20069DDE226F03F400B6916E /* UserConfig.m */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		20069DD5226EF86800B6916E /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				20069DD6226EF88400B6916E /* Tool.h */,
+				20069DD7226EF88400B6916E /* Tool.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		20069DE0226F0E7C00B6916E /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				20069DE2226F0E9E00B6916E /* HomeViewController.h */,
+				20069DE3226F0E9E00B6916E /* HomeViewController.m */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		20069DE1226F0E8200B6916E /* SetUp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SetUp;
+			sourceTree = "<group>";
+		};
 		3625FE443C174902248EECA2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				E320D49030B670E13C56E3D0 /* Pods-Record.debug.xcconfig */,
 				0BBBF8EC3E74A232BBC4B188 /* Pods-Record.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -204,8 +249,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				05442C2F226ED10E00814A6A /* ViewController.m in Sources */,
+				20069DDB226F004F00B6916E /* Common.m in Sources */,
+				20069DD8226EF88400B6916E /* Tool.m in Sources */,
+				20069DDF226F03F400B6916E /* UserConfig.m in Sources */,
 				05442C3A226ED11000814A6A /* main.m in Sources */,
+				20069DD4226EF66D00B6916E /* LoginVC.m in Sources */,
+				20069DE4226F0E9E00B6916E /* HomeViewController.m in Sources */,
 				05442C2C226ED10E00814A6A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +404,9 @@
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/Required",
 				);
+				GCC_PREFIX_HEADER = /Users/devintu/Desktop/test2/Record/Record/PrefixHeader.pch;
 				INFOPLIST_FILE = Record/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,7 +432,9 @@
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/Required",
 				);
+				GCC_PREFIX_HEADER = /Users/devintu/Desktop/test2/Record/Record/PrefixHeader.pch;
 				INFOPLIST_FILE = Record/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
