@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *getCodeBtn;
 @property (weak, nonatomic) IBOutlet UITextField *accountF;
 @property (weak, nonatomic) IBOutlet UITextField *passwordF;
 - (IBAction)getCodeAction;

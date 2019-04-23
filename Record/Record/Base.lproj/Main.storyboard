@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--首页-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bAs-1Z-AnN"/>
+                    <navigationItem key="navigationItem" title="首页" id="bAs-1Z-AnN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -185,6 +185,7 @@
                     </view>
                     <connections>
                         <outlet property="accountF" destination="PWu-3l-iWq" id="aRx-nE-1yE"/>
+                        <outlet property="getCodeBtn" destination="HXA-mi-USv" id="H6l-Li-x2b"/>
                         <outlet property="passwordF" destination="gsf-QA-bck" id="6pS-qB-FVk"/>
                     </connections>
                 </viewController>
@@ -233,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="99.400299850074973"/>
         </scene>
-        <!--Home View Controller-->
+        <!--设置-->
         <scene sceneID="WcD-2a-SQ1">
             <objects>
-                <viewController id="CMT-z1-cOY" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="CMT-z1-cOY" customClass="SetUpVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Mpz-EY-HHW"/>
                         <viewControllerLayoutGuide type="bottom" id="R0N-9b-60n"/>
@@ -245,19 +246,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="J9u-cE-ZxY">
-                                <rect key="frame" x="-77" y="323" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="15" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qbX-zY-lMY">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CMT-z1-cOY" id="Wsp-vh-QZd"/>
+                                    <outlet property="delegate" destination="CMT-z1-cOY" id="tf0-vi-b6s"/>
+                                </connections>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="qbX-zY-lMY" secondAttribute="bottom" id="6dl-gs-56B"/>
+                            <constraint firstItem="qbX-zY-lMY" firstAttribute="leading" secondItem="WuJ-Te-SXu" secondAttribute="leading" id="8ZB-iu-H8f"/>
+                            <constraint firstItem="qbX-zY-lMY" firstAttribute="top" secondItem="Mpz-EY-HHW" secondAttribute="bottom" id="DVz-x3-z0B"/>
+                            <constraint firstAttribute="trailing" secondItem="qbX-zY-lMY" secondAttribute="trailing" id="sAR-84-izf"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="xnV-u8-RJd"/>
+                    <navigationItem key="navigationItem" title="设置" id="xnV-u8-RJd"/>
+                    <connections>
+                        <outlet property="tabelView" destination="qbX-zY-lMY" id="uuO-Dv-CRa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvQ-fl-BUb" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="833"/>
+            <point key="canvasLocation" x="2032.8" y="832.53373313343332"/>
         </scene>
         <!--设置-->
         <scene sceneID="BTP-bW-LwF">

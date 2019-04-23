@@ -27,24 +27,26 @@
 - (IBAction)getCodeAction {
     //判断手机号
     if ([self.accountF.text isEqualToString:@""]) {
-        [Tool showMBProgressHUDText:HUD Message:@"请输入手机号" Time:2 addView:self.view FrameY:0];
+        [Tool showMBProgressHUDText:HUD Message:@"请输入手机号" Time:2 addView:self.view FrameY:100.f];
         return;
         
     }else if (!([Tool valiMobile:self.accountF.text] == nil)) {
         
-        [Tool showMBProgressHUDText:HUD Message:@"请输入正确的手机号" Time:2 addView:self.view FrameY:0];
+        [Tool showMBProgressHUDText:HUD Message:@"请输入正确的手机号" Time:2 addView:self.view FrameY:100.f];
         return;
     }
+    //计算倒计时时间
+    [self countReaseTime];
     __weak __typeof(HUD) weakHUD = HUD;
     [SMSSDK getVerificationCodeByMethod:SMSGetCodeMethodSMS phoneNumber:_accountF.text zone:@"86"  result:^(NSError *error) {
         
         if (!error)
         {
-            [Tool showMBProgressHUDText:weakHUD Message:@"验证码发送成功" Time:2 addView:self.view FrameY:0];
+            [Tool showMBProgressHUDText:weakHUD Message:@"验证码发送成功" Time:2 addView:self.view FrameY:100.f];
         }
         else
         {
-            [Tool showMBProgressHUDText:weakHUD Message:@"验证码发送失败" Time:2 addView:self.view FrameY:0];
+            [Tool showMBProgressHUDText:weakHUD Message:@"验证码发送失败" Time:2 addView:self.view FrameY:100.f];
         }
     }];
 }
@@ -102,8 +104,30 @@
         }
         else
         {
-            [Tool showMBProgressHUDText:weakHUD Message:@"您输入验证码不正确" Time:2 addView:self.view FrameY:0];
+            [Tool showMBProgressHUDText:weakHUD Message:@"您输入验证码不正确" Time:2 addView:self.view FrameY:100.f];
         }
     }];
+}
+
+#pragma mark--倒计时
+- (void)countReaseTime
+{
+    __block NSInteger second = 60;
+    __weak typeof(self) weakSelf = self;
+    dispatch_queue_t quene = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, quene);
+    dispatch_source_set_timer(timer, DISPATCH_TIME_NOW, 1 * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_event_handler(timer, ^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (second == 0) {
+                [weakSelf.getCodeBtn setTitle:@"验证码" forState:UIControlStateNormal];
+                dispatch_cancel(timer);
+            } else {
+                [weakSelf.getCodeBtn setTitle:[NSString stringWithFormat:@"%ld",second] forState:UIControlStateNormal];
+                second--;
+            }
+        });
+    });
+    dispatch_resume(timer);
 }
 @end

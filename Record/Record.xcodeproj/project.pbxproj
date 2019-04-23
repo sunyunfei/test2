@@ -13,11 +13,16 @@
 		05442C37226ED11000814A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05442C35226ED11000814A6A /* LaunchScreen.storyboard */; };
 		05442C3A226ED11000814A6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05442C39226ED11000814A6A /* main.m */; };
 		05442C4E226ED41000814A6A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05442C4D226ED41000814A6A /* libz.tbd */; };
+		200362F1226F3BA800D84860 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 200362EF226F3BA800D84860 /* HomeTableViewCell.m */; };
+		20036308226F4A9E00D84860 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20036307226F4A9E00D84860 /* HomeTableViewCell.xib */; };
+		2003630F226F568100D84860 /* AddModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003630D226F568100D84860 /* AddModeVC.m */; };
+		20036310226F568100D84860 /* AddModeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2003630E226F568100D84860 /* AddModeVC.xib */; };
 		20069DD4226EF66D00B6916E /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DD3226EF66D00B6916E /* LoginVC.m */; };
 		20069DD8226EF88400B6916E /* Tool.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DD7226EF88400B6916E /* Tool.m */; };
 		20069DDB226F004F00B6916E /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DDA226F004F00B6916E /* Common.m */; };
 		20069DDF226F03F400B6916E /* UserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DDE226F03F400B6916E /* UserConfig.m */; };
 		20069DE4226F0E9E00B6916E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DE3226F0E9E00B6916E /* HomeViewController.m */; };
+		20069DE7226F121D00B6916E /* SetUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DE6226F121D00B6916E /* SetUpVC.m */; };
 		8902E6904780CD8798594FF7 /* libPods-Record.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF19B370D7A8E14ACFBEC6DD /* libPods-Record.a */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +37,12 @@
 		05442C39226ED11000814A6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		05442C4D226ED41000814A6A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		0BBBF8EC3E74A232BBC4B188 /* Pods-Record.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.release.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.release.xcconfig"; sourceTree = "<group>"; };
+		200362EE226F3BA800D84860 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
+		200362EF226F3BA800D84860 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
+		20036307226F4A9E00D84860 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
+		2003630C226F568100D84860 /* AddModeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddModeVC.h; sourceTree = "<group>"; };
+		2003630D226F568100D84860 /* AddModeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddModeVC.m; sourceTree = "<group>"; };
+		2003630E226F568100D84860 /* AddModeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddModeVC.xib; sourceTree = "<group>"; };
 		20069DD2226EF66D00B6916E /* LoginVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		20069DD3226EF66D00B6916E /* LoginVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		20069DD6226EF88400B6916E /* Tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tool.h; sourceTree = "<group>"; };
@@ -43,6 +54,8 @@
 		20069DDE226F03F400B6916E /* UserConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserConfig.m; sourceTree = "<group>"; };
 		20069DE2226F0E9E00B6916E /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		20069DE3226F0E9E00B6916E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		20069DE5226F121D00B6916E /* SetUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpVC.h; sourceTree = "<group>"; };
+		20069DE6226F121D00B6916E /* SetUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetUpVC.m; sourceTree = "<group>"; };
 		E320D49030B670E13C56E3D0 /* Pods-Record.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.debug.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.debug.xcconfig"; sourceTree = "<group>"; };
 		EF19B370D7A8E14ACFBEC6DD /* libPods-Record.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Record.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -133,6 +146,12 @@
 			children = (
 				20069DE2226F0E9E00B6916E /* HomeViewController.h */,
 				20069DE3226F0E9E00B6916E /* HomeViewController.m */,
+				200362EE226F3BA800D84860 /* HomeTableViewCell.h */,
+				200362EF226F3BA800D84860 /* HomeTableViewCell.m */,
+				20036307226F4A9E00D84860 /* HomeTableViewCell.xib */,
+				2003630C226F568100D84860 /* AddModeVC.h */,
+				2003630D226F568100D84860 /* AddModeVC.m */,
+				2003630E226F568100D84860 /* AddModeVC.xib */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -140,6 +159,8 @@
 		20069DE1226F0E8200B6916E /* SetUp */ = {
 			isa = PBXGroup;
 			children = (
+				20069DE5226F121D00B6916E /* SetUpVC.h */,
+				20069DE6226F121D00B6916E /* SetUpVC.m */,
 			);
 			path = SetUp;
 			sourceTree = "<group>";
@@ -212,7 +233,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				05442C37226ED11000814A6A /* LaunchScreen.storyboard in Resources */,
+				20036310226F568100D84860 /* AddModeVC.xib in Resources */,
 				05442C34226ED11000814A6A /* Assets.xcassets in Resources */,
+				20036308226F4A9E00D84860 /* HomeTableViewCell.xib in Resources */,
 				05442C32226ED10E00814A6A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,9 +275,12 @@
 				20069DDB226F004F00B6916E /* Common.m in Sources */,
 				20069DD8226EF88400B6916E /* Tool.m in Sources */,
 				20069DDF226F03F400B6916E /* UserConfig.m in Sources */,
+				2003630F226F568100D84860 /* AddModeVC.m in Sources */,
 				05442C3A226ED11000814A6A /* main.m in Sources */,
+				200362F1226F3BA800D84860 /* HomeTableViewCell.m in Sources */,
 				20069DD4226EF66D00B6916E /* LoginVC.m in Sources */,
 				20069DE4226F0E9E00B6916E /* HomeViewController.m in Sources */,
+				20069DE7226F121D00B6916E /* SetUpVC.m in Sources */,
 				05442C2C226ED10E00814A6A /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
