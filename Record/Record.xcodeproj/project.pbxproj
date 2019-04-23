@@ -404,7 +404,7 @@
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/Required",
 				);
-				GCC_PREFIX_HEADER = /Users/devintu/Desktop/test2/Record/Record/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Record/PrefixHeader.pch";
 				INFOPLIST_FILE = Record/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -432,7 +432,7 @@
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/SMSSDK",
 					"$(PROJECT_DIR)/Record/Tools/shareSDK/SDK/Required",
 				);
-				GCC_PREFIX_HEADER = /Users/devintu/Desktop/test2/Record/Record/PrefixHeader.pch;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/Record/PrefixHeader.pch";
 				INFOPLIST_FILE = Record/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
