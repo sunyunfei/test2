@@ -215,15 +215,19 @@
         <!--首页-->
         <scene sceneID="tGP-51-0ns">
             <objects>
+<<<<<<< Updated upstream
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LU2-AY-PwB" customClass="RootNavigationController" sceneMemberID="viewController">
+=======
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LU2-AY-PwB" customClass="ILNavigationController" sceneMemberID="viewController">
+>>>>>>> Stashed changes
                     <tabBarItem key="tabBarItem" title="首页" image="HomeIcon_noselect" selectedImage="HomeIcon_select" id="Xqr-TD-17y"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ian-fT-V08">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -276,15 +280,19 @@
         <!--设置-->
         <scene sceneID="BTP-bW-LwF">
             <objects>
+<<<<<<< Updated upstream
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXY-bj-9CI" customClass="RootNavigationController" sceneMemberID="viewController">
+=======
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXY-bj-9CI" customClass="ILNavigationController" sceneMemberID="viewController">
+>>>>>>> Stashed changes
                     <tabBarItem key="tabBarItem" title="设置" image="SetUp_noselect" selectedImage="SetUp_select" id="ql7-Wt-hVW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4BP-I2-Gjc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="tintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <color key="barTintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

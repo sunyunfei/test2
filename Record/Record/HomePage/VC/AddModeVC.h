@@ -6,11 +6,10 @@
 //  Copyright © 2019 syf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
+#import "RootViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AddModeVC : UIViewController
+@interface AddModeVC : RootViewController
 @property (weak, nonatomic) IBOutlet UIView *contentView;
 
 @end

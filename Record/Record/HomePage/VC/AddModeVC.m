@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.title = @"添加心情日记";
+    [self addBackItemAndAction];
 }
 
 /*
