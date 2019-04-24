@@ -6,5 +6,6 @@ target 'Record' do
   pod 'mob_smssdk'
   pod 'AFNetworking'
   pod 'MBProgressHUD'
-
+  pod 'IAPHelper'
+  pod 'BmobSDK'
 end

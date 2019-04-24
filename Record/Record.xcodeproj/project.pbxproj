@@ -13,6 +13,9 @@
 		05442C37226ED11000814A6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 05442C35226ED11000814A6A /* LaunchScreen.storyboard */; };
 		05442C3A226ED11000814A6A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 05442C39226ED11000814A6A /* main.m */; };
 		05442C4E226ED41000814A6A /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 05442C4D226ED41000814A6A /* libz.tbd */; };
+		05ACC666226FE60700192B97 /* RootNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACC665226FE60700192B97 /* RootNavigationController.m */; };
+		05ACC697226FE9F800192B97 /* HomeContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACC696226FE9F800192B97 /* HomeContentModel.m */; };
+		05ACC69B226FEAA100192B97 /* IntegralModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACC69A226FEAA100192B97 /* IntegralModel.m */; };
 		200362F1226F3BA800D84860 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 200362EF226F3BA800D84860 /* HomeTableViewCell.m */; };
 		20036308226F4A9E00D84860 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20036307226F4A9E00D84860 /* HomeTableViewCell.xib */; };
 		2003630F226F568100D84860 /* AddModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003630D226F568100D84860 /* AddModeVC.m */; };
@@ -36,6 +39,12 @@
 		05442C38226ED11000814A6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		05442C39226ED11000814A6A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		05442C4D226ED41000814A6A /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		05ACC664226FE60700192B97 /* RootNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootNavigationController.h; sourceTree = "<group>"; };
+		05ACC665226FE60700192B97 /* RootNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootNavigationController.m; sourceTree = "<group>"; };
+		05ACC695226FE9F800192B97 /* HomeContentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeContentModel.h; sourceTree = "<group>"; };
+		05ACC696226FE9F800192B97 /* HomeContentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeContentModel.m; sourceTree = "<group>"; };
+		05ACC699226FEAA100192B97 /* IntegralModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntegralModel.h; sourceTree = "<group>"; };
+		05ACC69A226FEAA100192B97 /* IntegralModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntegralModel.m; sourceTree = "<group>"; };
 		0BBBF8EC3E74A232BBC4B188 /* Pods-Record.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.release.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.release.xcconfig"; sourceTree = "<group>"; };
 		200362EE226F3BA800D84860 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		200362EF226F3BA800D84860 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
@@ -121,13 +130,78 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		20069DD1226EF65800B6916E /* Login */ = {
+		05ACC68F226FE99C00192B97 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				20069DE5226F121D00B6916E /* SetUpVC.h */,
+				20069DE6226F121D00B6916E /* SetUpVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		05ACC690226FE9A300192B97 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				2003630C226F568100D84860 /* AddModeVC.h */,
+				2003630D226F568100D84860 /* AddModeVC.m */,
+				20069DE2226F0E9E00B6916E /* HomeViewController.h */,
+				20069DE3226F0E9E00B6916E /* HomeViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		05ACC691226FE9B400192B97 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				200362EE226F3BA800D84860 /* HomeTableViewCell.h */,
+				200362EF226F3BA800D84860 /* HomeTableViewCell.m */,
+				20036307226F4A9E00D84860 /* HomeTableViewCell.xib */,
+				2003630E226F568100D84860 /* AddModeVC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		05ACC692226FE9BD00192B97 /* VC */ = {
 			isa = PBXGroup;
 			children = (
 				20069DD2226EF66D00B6916E /* LoginVC.h */,
 				20069DD3226EF66D00B6916E /* LoginVC.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		05ACC693226FE9C600192B97 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
 				20069DDD226F03F400B6916E /* UserConfig.h */,
 				20069DDE226F03F400B6916E /* UserConfig.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		05ACC694226FE9E000192B97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05ACC695226FE9F800192B97 /* HomeContentModel.h */,
+				05ACC696226FE9F800192B97 /* HomeContentModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		05ACC698226FEA9000192B97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				05ACC699226FEAA100192B97 /* IntegralModel.h */,
+				05ACC69A226FEAA100192B97 /* IntegralModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		20069DD1226EF65800B6916E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				05ACC693226FE9C600192B97 /* Tool */,
+				05ACC692226FE9BD00192B97 /* VC */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -135,6 +209,8 @@
 		20069DD5226EF86800B6916E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				05ACC664226FE60700192B97 /* RootNavigationController.h */,
+				05ACC665226FE60700192B97 /* RootNavigationController.m */,
 				20069DD6226EF88400B6916E /* Tool.h */,
 				20069DD7226EF88400B6916E /* Tool.m */,
 			);
@@ -144,14 +220,9 @@
 		20069DE0226F0E7C00B6916E /* HomePage */ = {
 			isa = PBXGroup;
 			children = (
-				20069DE2226F0E9E00B6916E /* HomeViewController.h */,
-				20069DE3226F0E9E00B6916E /* HomeViewController.m */,
-				200362EE226F3BA800D84860 /* HomeTableViewCell.h */,
-				200362EF226F3BA800D84860 /* HomeTableViewCell.m */,
-				20036307226F4A9E00D84860 /* HomeTableViewCell.xib */,
-				2003630C226F568100D84860 /* AddModeVC.h */,
-				2003630D226F568100D84860 /* AddModeVC.m */,
-				2003630E226F568100D84860 /* AddModeVC.xib */,
+				05ACC694226FE9E000192B97 /* Model */,
+				05ACC691226FE9B400192B97 /* View */,
+				05ACC690226FE9A300192B97 /* VC */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -159,8 +230,8 @@
 		20069DE1226F0E8200B6916E /* SetUp */ = {
 			isa = PBXGroup;
 			children = (
-				20069DE5226F121D00B6916E /* SetUpVC.h */,
-				20069DE6226F121D00B6916E /* SetUpVC.m */,
+				05ACC698226FEA9000192B97 /* Model */,
+				05ACC68F226FE99C00192B97 /* VC */,
 			);
 			path = SetUp;
 			sourceTree = "<group>";
@@ -277,7 +348,10 @@
 				20069DDF226F03F400B6916E /* UserConfig.m in Sources */,
 				2003630F226F568100D84860 /* AddModeVC.m in Sources */,
 				05442C3A226ED11000814A6A /* main.m in Sources */,
+				05ACC666226FE60700192B97 /* RootNavigationController.m in Sources */,
+				05ACC697226FE9F800192B97 /* HomeContentModel.m in Sources */,
 				200362F1226F3BA800D84860 /* HomeTableViewCell.m in Sources */,
+				05ACC69B226FEAA100192B97 /* IntegralModel.m in Sources */,
 				20069DD4226EF66D00B6916E /* LoginVC.m in Sources */,
 				20069DE4226F0E9E00B6916E /* HomeViewController.m in Sources */,
 				20069DE7226F121D00B6916E /* SetUpVC.m in Sources */,

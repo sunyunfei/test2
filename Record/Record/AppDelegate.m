@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-
+#import <BmobSDK/Bmob.h>
 @interface AppDelegate ()
 
 @end
@@ -17,7 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+    [Bmob registerWithAppKey:@"b0cb86f2abcb9ba0a11ff64a42c827ae"];
     return YES;
 }
 
