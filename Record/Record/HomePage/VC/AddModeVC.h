@@ -11,6 +11,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AddModeVC : RootViewController
 @property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UITextView *contentTF;
+@property (weak, nonatomic) IBOutlet UILabel *placeHolderL;
+- (IBAction)BadModeAction:(UIButton *)sender;
+- (IBAction)submitAction;
+
+
 
 @end
 

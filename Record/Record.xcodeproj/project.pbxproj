@@ -26,7 +26,6 @@
 		20069DDF226F03F400B6916E /* UserConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DDE226F03F400B6916E /* UserConfig.m */; };
 		20069DE4226F0E9E00B6916E /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DE3226F0E9E00B6916E /* HomeViewController.m */; };
 		20069DE7226F121D00B6916E /* SetUpVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 20069DE6226F121D00B6916E /* SetUpVC.m */; };
-		20359D6B226FF2B700F82DF5 /* ILNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20359D6A226FF2B700F82DF5 /* ILNavigationController.m */; };
 		20359D6E226FF44A00F82DF5 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 20359D6D226FF44A00F82DF5 /* RootViewController.m */; };
 		8902E6904780CD8798594FF7 /* libPods-Record.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EF19B370D7A8E14ACFBEC6DD /* libPods-Record.a */; };
 /* End PBXBuildFile section */
@@ -67,8 +66,6 @@
 		20069DE3226F0E9E00B6916E /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		20069DE5226F121D00B6916E /* SetUpVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpVC.h; sourceTree = "<group>"; };
 		20069DE6226F121D00B6916E /* SetUpVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetUpVC.m; sourceTree = "<group>"; };
-		20359D69226FF2B700F82DF5 /* ILNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILNavigationController.h; sourceTree = "<group>"; };
-		20359D6A226FF2B700F82DF5 /* ILNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILNavigationController.m; sourceTree = "<group>"; };
 		20359D6C226FF44A00F82DF5 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		20359D6D226FF44A00F82DF5 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		E320D49030B670E13C56E3D0 /* Pods-Record.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.debug.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.debug.xcconfig"; sourceTree = "<group>"; };
@@ -150,6 +147,7 @@
 			children = (
 				2003630C226F568100D84860 /* AddModeVC.h */,
 				2003630D226F568100D84860 /* AddModeVC.m */,
+				2003630E226F568100D84860 /* AddModeVC.xib */,
 				20069DE2226F0E9E00B6916E /* HomeViewController.h */,
 				20069DE3226F0E9E00B6916E /* HomeViewController.m */,
 			);
@@ -162,7 +160,6 @@
 				200362EE226F3BA800D84860 /* HomeTableViewCell.h */,
 				200362EF226F3BA800D84860 /* HomeTableViewCell.m */,
 				20036307226F4A9E00D84860 /* HomeTableViewCell.xib */,
-				2003630E226F568100D84860 /* AddModeVC.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,13 +212,8 @@
 		20069DD5226EF86800B6916E /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-
 				05ACC664226FE60700192B97 /* RootNavigationController.h */,
 				05ACC665226FE60700192B97 /* RootNavigationController.m */,
-
-				20359D69226FF2B700F82DF5 /* ILNavigationController.h */,
-				20359D6A226FF2B700F82DF5 /* ILNavigationController.m */,
-
 				20069DD6226EF88400B6916E /* Tool.h */,
 				20069DD7226EF88400B6916E /* Tool.m */,
 				20359D6C226FF44A00F82DF5 /* RootViewController.h */,
@@ -357,7 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				20069DDB226F004F00B6916E /* Common.m in Sources */,
-				20359D6B226FF2B700F82DF5 /* ILNavigationController.m in Sources */,
 				20359D6E226FF44A00F82DF5 /* RootViewController.m in Sources */,
 				20069DD8226EF88400B6916E /* Tool.m in Sources */,
 				20069DDF226F03F400B6916E /* UserConfig.m in Sources */,

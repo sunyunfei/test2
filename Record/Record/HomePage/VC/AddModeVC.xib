@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddModeVC">
+            <connections>
+                <outlet property="contentTF" destination="0Qq-k0-WO5" id="bZH-gX-CQr"/>
+                <outlet property="contentView" destination="QzN-Cn-sV2" id="FgE-S6-nv1"/>
+                <outlet property="placeHolderL" destination="tJv-8Z-KvC" id="mVh-gD-pa1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QzN-Cn-sV2">
+                    <rect key="frame" x="20" y="70" width="335" height="330"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Qq-k0-WO5">
+                            <rect key="frame" x="13" y="10" width="309" height="310"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Hoo-Yh-2qh"/>
+                            </connections>
+                        </textView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#今天心情怎么样，有没有要倾诉的呢，快告诉你的圈友吧" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJv-8Z-KvC">
+                            <rect key="frame" x="18" y="15" width="307" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="G3O-Md-xIe"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="330" id="Jyp-0a-CgA"/>
+                        <constraint firstItem="tJv-8Z-KvC" firstAttribute="top" secondItem="QzN-Cn-sV2" secondAttribute="top" constant="15" id="Tsh-8n-jsZ"/>
+                        <constraint firstAttribute="bottom" secondItem="0Qq-k0-WO5" secondAttribute="bottom" constant="10" id="WGz-yW-XUz"/>
+                        <constraint firstItem="0Qq-k0-WO5" firstAttribute="top" secondItem="QzN-Cn-sV2" secondAttribute="top" constant="10" id="bQr-iR-hBy"/>
+                        <constraint firstItem="tJv-8Z-KvC" firstAttribute="leading" secondItem="QzN-Cn-sV2" secondAttribute="leading" constant="18" id="dZe-hb-Nyd"/>
+                        <constraint firstItem="0Qq-k0-WO5" firstAttribute="leading" secondItem="QzN-Cn-sV2" secondAttribute="leading" constant="13" id="egO-yw-wy3"/>
+                        <constraint firstAttribute="trailing" secondItem="tJv-8Z-KvC" secondAttribute="trailing" constant="10" id="gqK-0H-lDk"/>
+                        <constraint firstAttribute="trailing" secondItem="0Qq-k0-WO5" secondAttribute="trailing" constant="13" id="kxw-Up-At5"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BPn-CK-chk">
+                    <rect key="frame" x="20" y="437" width="335" height="52"/>
+                    <subviews>
+                        <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="195-oA-j1K">
+                            <rect key="frame" x="50" y="2" width="48" height="48"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="47Z-L4-AHe"/>
+                                <constraint firstAttribute="height" constant="48" id="FzB-2s-Be6"/>
+                            </constraints>
+                            <state key="normal" title="Button" image="cryGray_icon"/>
+                            <state key="selected" image="cry_icon"/>
+                            <connections>
+                                <action selector="BadModeAction:" destination="-1" eventType="touchUpInside" id="qcL-VD-sg3"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ynB-B2-VLx">
+                            <rect key="frame" x="118" y="2" width="48" height="48"/>
+                            <state key="normal" title="Button" image="badModegray_icon_"/>
+                            <state key="selected" image="badMode_icon_"/>
+                            <connections>
+                                <action selector="BadModeAction:" destination="-1" eventType="touchUpInside" id="XJ3-8I-FIu"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pM4-Fd-UFq">
+                            <rect key="frame" x="186" y="2" width="48" height="48"/>
+                            <state key="normal" title="Button" image="jokeGray_icon"/>
+                            <state key="selected" image="joke_icon"/>
+                            <connections>
+                                <action selector="BadModeAction:" destination="-1" eventType="touchUpInside" id="VEp-TS-XA8"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6a-3q-udS">
+                            <rect key="frame" x="254" y="2" width="48" height="48"/>
+                            <state key="normal" title="Button" image="goodModegray_icon_"/>
+                            <state key="selected" image="goodMode_icon_"/>
+                            <connections>
+                                <action selector="BadModeAction:" destination="-1" eventType="touchUpInside" id="ezj-JU-yyt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="52" id="1rP-hd-Efa"/>
+                        <constraint firstItem="ynB-B2-VLx" firstAttribute="leading" secondItem="195-oA-j1K" secondAttribute="trailing" constant="20" id="5y8-hS-IvY"/>
+                        <constraint firstItem="ynB-B2-VLx" firstAttribute="height" secondItem="195-oA-j1K" secondAttribute="height" id="8Mg-Od-iBu"/>
+                        <constraint firstItem="ynB-B2-VLx" firstAttribute="width" secondItem="195-oA-j1K" secondAttribute="width" id="99h-BI-MwZ"/>
+                        <constraint firstItem="H6a-3q-udS" firstAttribute="height" secondItem="195-oA-j1K" secondAttribute="height" id="BFb-WW-1M5"/>
+                        <constraint firstItem="ynB-B2-VLx" firstAttribute="top" secondItem="195-oA-j1K" secondAttribute="top" id="GDA-k3-6pz"/>
+                        <constraint firstItem="pM4-Fd-UFq" firstAttribute="top" secondItem="195-oA-j1K" secondAttribute="top" id="Khu-KU-3ki"/>
+                        <constraint firstItem="195-oA-j1K" firstAttribute="top" secondItem="BPn-CK-chk" secondAttribute="top" constant="2" id="NO4-lY-13X"/>
+                        <constraint firstItem="H6a-3q-udS" firstAttribute="top" secondItem="195-oA-j1K" secondAttribute="top" id="RsB-R6-H3D"/>
+                        <constraint firstItem="H6a-3q-udS" firstAttribute="leading" secondItem="pM4-Fd-UFq" secondAttribute="trailing" constant="20" id="bcW-2E-BtL"/>
+                        <constraint firstItem="pM4-Fd-UFq" firstAttribute="leading" secondItem="ynB-B2-VLx" secondAttribute="trailing" constant="20" id="hY5-f5-lRs"/>
+                        <constraint firstItem="pM4-Fd-UFq" firstAttribute="height" secondItem="195-oA-j1K" secondAttribute="height" id="l1n-YG-xhl"/>
+                        <constraint firstItem="195-oA-j1K" firstAttribute="leading" secondItem="BPn-CK-chk" secondAttribute="leading" constant="50" id="p8i-Jw-vbi"/>
+                        <constraint firstItem="H6a-3q-udS" firstAttribute="width" secondItem="195-oA-j1K" secondAttribute="width" id="uC2-Hc-GVj"/>
+                        <constraint firstItem="pM4-Fd-UFq" firstAttribute="width" secondItem="195-oA-j1K" secondAttribute="width" id="yeI-en-Ahh"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rha-hK-vMp">
+                    <rect key="frame" x="40" y="536" width="295" height="48"/>
+                    <color key="backgroundColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="BQ1-g7-eWW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <state key="normal" title="提交心情">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="submitAction" destination="-1" eventType="touchUpInside" id="XMe-sU-0jL"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="BPn-CK-chk" secondAttribute="trailing" constant="20" id="3L3-hT-vo1"/>
+                <constraint firstItem="BPn-CK-chk" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="9ix-II-bME"/>
+                <constraint firstAttribute="trailing" secondItem="Rha-hK-vMp" secondAttribute="trailing" constant="40" id="Rqa-Dy-Elt"/>
+                <constraint firstAttribute="bottom" secondItem="Rha-hK-vMp" secondAttribute="bottom" constant="83" id="Rqj-FW-qJq"/>
+                <constraint firstItem="QzN-Cn-sV2" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="Skd-75-BnW"/>
+                <constraint firstAttribute="trailing" secondItem="QzN-Cn-sV2" secondAttribute="trailing" constant="20" id="d86-2E-t6d"/>
+                <constraint firstItem="BPn-CK-chk" firstAttribute="top" secondItem="QzN-Cn-sV2" secondAttribute="bottom" constant="37" id="fpy-sO-fvX"/>
+                <constraint firstItem="Rha-hK-vMp" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="40" id="lzw-0J-VZN"/>
+                <constraint firstItem="QzN-Cn-sV2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="zvf-EC-A3P"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="117.39130434782609"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="badMode_icon_" width="32" height="32"/>
+        <image name="badModegray_icon_" width="32" height="32"/>
+        <image name="cryGray_icon" width="32" height="32"/>
+        <image name="cry_icon" width="32" height="32"/>
+        <image name="goodMode_icon_" width="32" height="32"/>
+        <image name="goodModegray_icon_" width="32" height="32"/>
+        <image name="jokeGray_icon" width="32" height="32"/>
+        <image name="joke_icon" width="32" height="32"/>
+    </resources>
+</document>

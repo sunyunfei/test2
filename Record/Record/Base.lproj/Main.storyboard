@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfI-Gs-INo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hfI-Gs-INo">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,13 +20,6 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VE9-cs-lC4">
-                                <rect key="frame" x="-77" y="323" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="bAs-1Z-AnN"/>
@@ -185,7 +178,6 @@
                     </view>
                     <connections>
                         <outlet property="accountF" destination="PWu-3l-iWq" id="aRx-nE-1yE"/>
-                        <outlet property="getCodeBtn" destination="HXA-mi-USv" id="H6l-Li-x2b"/>
                         <outlet property="passwordF" destination="gsf-QA-bck" id="6pS-qB-FVk"/>
                     </connections>
                 </viewController>
@@ -215,19 +207,15 @@
         <!--首页-->
         <scene sceneID="tGP-51-0ns">
             <objects>
-<<<<<<< Updated upstream
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LU2-AY-PwB" customClass="RootNavigationController" sceneMemberID="viewController">
-=======
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LU2-AY-PwB" customClass="ILNavigationController" sceneMemberID="viewController">
->>>>>>> Stashed changes
                     <tabBarItem key="tabBarItem" title="首页" image="HomeIcon_noselect" selectedImage="HomeIcon_select" id="Xqr-TD-17y"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ian-fT-V08">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -250,27 +238,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" indicatorStyle="white" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="15" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="qbX-zY-lMY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="u1w-WU-RTt">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <sections/>
                                 <connections>
-                                    <outlet property="dataSource" destination="CMT-z1-cOY" id="Wsp-vh-QZd"/>
-                                    <outlet property="delegate" destination="CMT-z1-cOY" id="tf0-vi-b6s"/>
+                                    <outlet property="dataSource" destination="CMT-z1-cOY" id="lL6-IO-Mer"/>
+                                    <outlet property="delegate" destination="CMT-z1-cOY" id="64G-u6-ehU"/>
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qbX-zY-lMY" secondAttribute="bottom" id="6dl-gs-56B"/>
-                            <constraint firstItem="qbX-zY-lMY" firstAttribute="leading" secondItem="WuJ-Te-SXu" secondAttribute="leading" id="8ZB-iu-H8f"/>
-                            <constraint firstItem="qbX-zY-lMY" firstAttribute="top" secondItem="Mpz-EY-HHW" secondAttribute="bottom" id="DVz-x3-z0B"/>
-                            <constraint firstAttribute="trailing" secondItem="qbX-zY-lMY" secondAttribute="trailing" id="sAR-84-izf"/>
+                            <constraint firstAttribute="bottom" secondItem="u1w-WU-RTt" secondAttribute="bottom" id="Rd9-9w-BM4"/>
+                            <constraint firstItem="u1w-WU-RTt" firstAttribute="top" secondItem="Mpz-EY-HHW" secondAttribute="bottom" id="Yf1-qg-VCS"/>
+                            <constraint firstAttribute="trailing" secondItem="u1w-WU-RTt" secondAttribute="trailing" id="ZM4-JI-2pF"/>
+                            <constraint firstItem="u1w-WU-RTt" firstAttribute="leading" secondItem="WuJ-Te-SXu" secondAttribute="leading" id="ti4-1n-s6u"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="设置" id="xnV-u8-RJd"/>
                     <connections>
-                        <outlet property="tabelView" destination="qbX-zY-lMY" id="uuO-Dv-CRa"/>
+                        <outlet property="tabelView" destination="u1w-WU-RTt" id="QfH-BY-OuT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvQ-fl-BUb" sceneMemberID="firstResponder"/>
@@ -280,19 +267,15 @@
         <!--设置-->
         <scene sceneID="BTP-bW-LwF">
             <objects>
-<<<<<<< Updated upstream
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXY-bj-9CI" customClass="RootNavigationController" sceneMemberID="viewController">
-=======
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXY-bj-9CI" customClass="ILNavigationController" sceneMemberID="viewController">
->>>>>>> Stashed changes
                     <tabBarItem key="tabBarItem" title="设置" image="SetUp_noselect" selectedImage="SetUp_select" id="ql7-Wt-hVW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4BP-I2-Gjc">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.86418563130000003" green="0.19926121829999999" blue="0.35682389139999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
