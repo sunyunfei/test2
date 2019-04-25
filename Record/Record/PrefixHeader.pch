@@ -12,4 +12,5 @@
 #import "Tool.h"
 #import "Common.h"
 #import "UserConfig.h"
+#import "IntegralTool.h"
 #endif /* PrefixHeader_pch */

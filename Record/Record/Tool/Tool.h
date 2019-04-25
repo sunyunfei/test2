@@ -133,7 +133,7 @@
 + (NSInteger)getSexFromIdCardSex:(NSString*)idCard;
 
 +(void)showMBProgressHUDText:(MBProgressHUD *)hud Message:(NSString *)text Time:(NSInteger)time addView:(UIView *)addView FrameY:(CGFloat)y;
-
++(void)showMBProgressHUDText:(NSString *)text view:(UIView *)addView;
 /**
  *  字节换算
  *

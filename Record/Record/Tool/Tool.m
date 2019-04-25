@@ -49,6 +49,22 @@
     [hud hide:YES afterDelay:time];
 }
 
+
++(void)showMBProgressHUDText:(NSString *)text view:(UIView *)addView
+{
+    MBProgressHUD *hud = [[MBProgressHUD alloc]init];
+    [hud removeFromSuperview];
+    hud = [MBProgressHUD showHUDAddedTo:addView animated:YES];
+    hud.mode = MBProgressHUDModeText;
+    hud.detailsLabelText = text;
+    hud.userInteractionEnabled = NO;
+    hud.margin = 9.f;
+    hud.detailsLabelFont = [UIFont systemFontOfSize:14];
+    hud.removeFromSuperViewOnHide = YES;
+    [hud hide:YES afterDelay:2];
+}
+
+
 #pragma mark - 精确判断身份证号码
 +(BOOL)checkIdentityCardNo:(NSString*)value
 {
