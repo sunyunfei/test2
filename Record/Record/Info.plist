@@ -20,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>MOBAppKey</key>
+	<string>1f36cf3df6b96</string>
+	<key>MOBAppSecret</key>
+	<string>f59c86fee1963c115d2e3f49bc807df3</string>
+	<key>NSContactsUsageDescription</key>
+	<string>通讯录好友</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -34,12 +40,6 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSContactsUsageDescription</key>
-	<string>通讯录好友</string>
-	<key>MOBAppKey</key>
-	<string>1f36cf3df6b96</string>
-	<key>MOBAppSecret</key>
-	<string>f59c86fee1963c115d2e3f49bc807df3</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
