@@ -15,9 +15,7 @@
 #import "IAPViewController.h"
 static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
-{
-    MBProgressHUD *HUD;
-}
+
 @property (nonatomic, strong)UITableView *tableVew;
 @property (nonatomic, strong)NSMutableArray *dataArr;
 
@@ -121,7 +119,6 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
                 }];
             }else{
                 integral-=1;
-                [Tool showMBProgressHUDText:HUD Message:@"积分-1" Time:1.7 addView:self.view FrameY:0.0];
                 [IntegralTool shareTool].integral = integral;
                 [[IntegralTool shareTool]submitIntegral];
                 LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
@@ -141,6 +138,7 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
         }
     }
 }
+
 //登录
 - (void)presentLoginVC
 {

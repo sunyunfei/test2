@@ -12,6 +12,7 @@
 @interface LookModeDetailVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     CGFloat contentH;
+    MBProgressHUD *HUD;
 }
 @property (nonatomic, strong)UITableView *tableView;
 @property (nonatomic, strong)UIView *headerView;
@@ -30,6 +31,7 @@
     NSAttributedString *attStr = [[NSAttributedString alloc]initWithString:_contentModel.content];
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:CGSizeMake([UIScreen mainScreen].bounds.size.width-30, CGFLOAT_MAX) text:attStr];
     contentH = layout.textBoundingSize.height;
+    [Tool showMBProgressHUDText:HUD Message:@"积分-1" Time:1.7 addView:self.view FrameY:0.0];
 }
 
 - (UITableView *)tableView
