@@ -30,6 +30,8 @@ static NSString *iap_cell = @"IAPCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addBackItemAndAction];
+    self.title = @"购买积分";
     [self setUI];
     __weak typeof(self)weakSelf = self;
     [MBProgressHUD showHUDAddedTo:self.view animated:true];

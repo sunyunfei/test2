@@ -34,7 +34,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="120" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QX8-wb-GFb">
-                    <rect key="frame" x="116" y="38.5" width="30" height="15"/>
+                    <rect key="frame" x="116" y="41.5" width="30" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="Edc-WY-7rz"/>
                         <constraint firstAttribute="width" constant="30" id="wfv-cn-4lz"/>
@@ -87,7 +87,7 @@
                 <constraint firstItem="5rY-pw-ihB" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="LdW-oA-cNs"/>
                 <constraint firstItem="5rY-pw-ihB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="TDo-LY-CBR"/>
                 <constraint firstItem="JbQ-fw-b2h" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="17" id="aIv-H5-MaV"/>
-                <constraint firstItem="QX8-wb-GFb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="3" id="evk-rJ-82p"/>
+                <constraint firstItem="QX8-wb-GFb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="6" id="evk-rJ-82p"/>
                 <constraint firstItem="tTp-9E-sL9" firstAttribute="leading" secondItem="5rY-pw-ihB" secondAttribute="trailing" constant="8" id="f7S-cY-QBc"/>
                 <constraint firstItem="tTp-9E-sL9" firstAttribute="leading" secondItem="Z5y-Xr-c9Y" secondAttribute="leading" id="fKq-Cv-Kcm"/>
                 <constraint firstItem="tTp-9E-sL9" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="3" id="gJb-u5-IZQ"/>

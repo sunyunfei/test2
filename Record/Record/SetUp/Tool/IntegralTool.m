@@ -85,7 +85,6 @@
             [obj updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
                 
                 if (isSuccessful) {
-                    
                     self.submitSuccess = true;
                 }else{
                     self.submitSuccess = false;

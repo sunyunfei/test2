@@ -16,4 +16,7 @@
 #import "YYKit.h"
 #import <BmobSDK/Bmob.h>
 #import "IntegralTool.h"
+#import "AlertTool.h"
+#import "IntegralTool.h"
+
 #endif /* PrefixHeader_pch */

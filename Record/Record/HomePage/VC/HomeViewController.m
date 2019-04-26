@@ -12,6 +12,7 @@
 #import "AddModeVC.h"
 #import "HomeContentModel.h"
 #import "LookModeDetailVC.h"
+#import "IAPViewController.h"
 static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)UITableView *tableVew;
@@ -96,10 +97,45 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
-    detailVC.hidesBottomBarWhenPushed = YES;
-    detailVC.contentModel = _dataArr[indexPath.section];
-    [self.navigationController pushViewController:detailVC animated:YES];
+    //判断
+    HomeContentModel *contentModel = _dataArr[indexPath.section];
+    if ([contentModel.mobile isEqualToString:[UserConfig sharedInstance].accountNum]) {
+        LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
+        detailVC.hidesBottomBarWhenPushed = YES;
+        detailVC.contentModel = _dataArr[indexPath.section];
+        [self.navigationController pushViewController:detailVC animated:YES];
+    }else{
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        NSInteger integral = [IntegralTool shareTool].integral;
+        if ([userDefault boolForKey:@"isIntegralAlert"]) {
+            if (integral<=0) {
+                [AlertTool showALertTitle:@"您已经没有积分了，请购买积分" content:@"" showType:oneButton sure:^{
+                    IAPViewController *vc = [[IAPViewController alloc]init];
+                    vc.hidesBottomBarWhenPushed = true;
+                    [self.navigationController pushViewController:vc animated:true];
+                } cancel:^{
+                    
+                }];
+            }else{
+                integral-=1;
+                [IntegralTool shareTool].integral = integral;
+                [[IntegralTool shareTool]submitIntegral];
+                LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
+                detailVC.hidesBottomBarWhenPushed = YES;
+                detailVC.contentModel = _dataArr[indexPath.section];
+                [self.navigationController pushViewController:detailVC animated:YES];
+            }
+        }else{
+            [AlertTool showALertTitle:@"温馨提示" content:@"查看别人的心情将消耗您一个积分哦" showType:twoButton sure:^{
+                [userDefault setInteger:integral forKey:@"integral"];
+                [userDefault setBool:YES forKey:@"isIntegralAlert"];
+                [userDefault synchronize];
+                [[IntegralTool shareTool]submitIntegral];
+            } cancel:^{
+                
+            }];
+        }
+    }
 }
 //登录
 - (void)presentLoginVC
@@ -164,6 +200,8 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
         [homeVC.tableVew reloadData];
         if (array.count<10) {
             homeVC.tableVew.mj_footer.hidden = YES;
+        }else{
+            homeVC.tableVew.mj_footer.hidden = NO;
         }
         [homeVC.tableVew.mj_footer endRefreshing];
         [homeVC.tableVew.mj_header endRefreshing];
