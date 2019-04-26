@@ -83,6 +83,27 @@
 }
 - (void)justyPasswordToLogin
 {
+    //审核使用
+    if ([_accountF.text isEqualToString:@"15501079050"] && [_passwordF.text isEqualToString:@"1111"]) {
+        
+        //直接通过
+        [UserConfig sharedInstance].logined = YES;
+        NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+        [defaultUser setObject:self.accountF.text forKey:@"accountNum"];
+        [defaultUser synchronize];
+        //请求积分
+        [[IntegralTool shareTool] requestIntegral];
+        if ([self.navigationController popViewControllerAnimated:YES]) {
+            [self.navigationController popViewControllerAnimated:YES];
+            
+        }else{
+            [self dismissViewControllerAnimated:YES completion:^{
+                
+            }];
+        }
+        return;
+    }
+    
     __weak __typeof(HUD) weakHUD = HUD;
     __weak __typeof(self) weakSelf = self;
     [SMSSDK commitVerificationCode:_passwordF.text phoneNumber:_accountF.text zone:@"86" result:^(NSError *error) {
@@ -93,6 +114,8 @@
             NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
             [defaultUser setObject:weakSelf.accountF.text forKey:@"accountNum"];
             [defaultUser synchronize];
+            //请求积分
+            [[IntegralTool shareTool] requestIntegral];
             if ([self.navigationController popViewControllerAnimated:YES]) {
                 [self.navigationController popViewControllerAnimated:YES];
                 
@@ -107,6 +130,11 @@
             [Tool showMBProgressHUDText:weakHUD Message:@"您输入验证码不正确" Time:2 addView:self.view FrameY:100.f];
         }
     }];
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+    
+    [self.view endEditing:true];
 }
 
 #pragma mark--倒计时

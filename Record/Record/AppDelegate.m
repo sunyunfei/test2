@@ -18,6 +18,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Bmob registerWithAppKey:@"b0cb86f2abcb9ba0a11ff64a42c827ae"];
+    //请求积分
+    [[IntegralTool shareTool] requestIntegral];
     return YES;
 }
 

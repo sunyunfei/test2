@@ -15,4 +15,5 @@
 #import "MJRefresh.h"
 #import "YYKit.h"
 #import <BmobSDK/Bmob.h>
+#import "IntegralTool.h"
 #endif /* PrefixHeader_pch */

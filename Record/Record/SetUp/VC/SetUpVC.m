@@ -7,10 +7,14 @@
 //
 
 #import "SetUpVC.h"
-
+#import "IAPViewController.h"
+#import "AgreementViewController.h"
+#import "AboutViewController.h"
+#import "LoginVC.h"
 @interface SetUpVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)NSMutableArray *dataArr;
 @property (nonatomic, strong)UIView *headerView;
+@property (nonatomic,weak)UILabel *iphoneNum;
 @end
 
 @implementation SetUpVC
@@ -19,10 +23,33 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _dataArr = [[NSMutableArray alloc]init];
-    [_dataArr addObject:@[@{@"name":@"我的积分",@"content":@"200"}]];
-    [_dataArr addObject:@[@{@"name":@"隐私协议",@"content":@""},@{@"name":@"服务条款",@"content":@""},@{@"name":@"关于",@"content":@""}]];
+    
     _tabelView.tableHeaderView = self.headerView;
 }
+
+- (void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+    NSString *account = [defaultUser objectForKey:@"accountNum"];
+    if (!account||account.length==0) {
+        [self presentLoginVC];
+    }else{
+        [UserConfig sharedInstance].logined = YES;
+        [UserConfig sharedInstance].accountNum = account;
+        self.iphoneNum.text = account;
+    }
+    
+    if (_dataArr.count > 0) {
+        [_dataArr removeAllObjects];
+    }
+    
+    [_dataArr addObject:@[@{@"name":@"我的积分",@"content":[NSString stringWithFormat:@"%ld",(long)[IntegralTool shareTool].integral]}]];
+    [_dataArr addObject:@[@{@"name":@"隐私协议",@"content":@""},@{@"name":@"服务条款",@"content":@""},@{@"name":@"关于",@"content":@""}]];
+    [_tabelView reloadData];
+}
+
 - (UIView *)headerView{
     if (!_headerView) {
         _headerView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, 140)];
@@ -40,8 +67,36 @@
 //        [iphoneNum setBackgroundColor:[UIColor redColor]];
         [iphoneNum setFont:[UIFont systemFontOfSize:14]];
         [_headerView addSubview:iphoneNum];
+        self.iphoneNum = iphoneNum;
     }
     return _headerView;
+}
+
+//登录
+- (void)presentLoginVC
+{
+    UIStoryboard * story =
+    [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginVC *logVC = [story instantiateViewControllerWithIdentifier:@"LoginVC"];
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    /* viewController.presentedViewController只有present才有值，push的时候为nil
+     */
+    
+    //防止重复弹
+    if ([viewController.presentedViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigation = (id)viewController.presentedViewController;
+        if ([navigation.topViewController isKindOfClass:[LoginVC class]]) {
+            return;
+        }
+    }
+    if (viewController.presentedViewController) {
+        //要先dismiss结束后才能重新present否则会出现Warning: Attempt to present <UINavigationController: 0x7fdd22262800> on <UITabBarController: 0x7fdd21c33a60> whose view is not in the window hierarchy!就会present不出来登录页面
+        [viewController.presentedViewController dismissViewControllerAnimated:false completion:^{
+            [viewController presentViewController:logVC animated:true completion:nil];
+        }];
+    }else {
+        [viewController presentViewController:logVC animated:true completion:nil];
+    }
 }
 #pragma mark--UITableViewDelegate/UItableViewdatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -60,18 +115,18 @@
     UILabel *contendL;
     
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifer"];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"identifer"];
         contendL = [[UILabel alloc]initWithFrame:CGRectMake([UIScreen mainScreen].bounds.size.width-47, 0, 100, 44)];
         [contendL setTextColor:[UIColor darkGrayColor]];
         [contendL setFont:[UIFont systemFontOfSize:14]];
         [cell.contentView addSubview:contendL];
     }
-    if (indexPath.section!=0) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
+    
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     NSString *tmpStr = [tmpArr[indexPath.row]objectForKey:@"name"];
     [cell.textLabel setText:tmpStr];
-    [contendL setText:[tmpArr[indexPath.row]objectForKey:@"content"]];
+    cell.detailTextLabel.text = [tmpArr[indexPath.row]objectForKey:@"content"];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -103,6 +158,28 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section ==0 && indexPath.row == 0) {
+        
+        IAPViewController *vc = [[IAPViewController alloc]init];
+        vc.hidesBottomBarWhenPushed = true;
+        [self.navigationController pushViewController:vc animated:true];
+    }else if (indexPath.section == 1){
+        
+        if (indexPath.row == 1 || indexPath.row == 0) {
+            
+            AgreementViewController *vc = [[AgreementViewController alloc]init];
+            vc.type = indexPath.row;
+            vc.hidesBottomBarWhenPushed = true;
+            [self.navigationController pushViewController:vc animated:true];
+        }else{
+            
+            //关于
+            AboutViewController *vc = [[AboutViewController alloc]init];
+            vc.hidesBottomBarWhenPushed = true;
+            [self.navigationController pushViewController:vc animated:true];
+        }
+    }
 }
 #pragma mark--修改头像
 -(void)tapAction:(UIGestureRecognizer *)ges
@@ -114,15 +191,9 @@
 {
     [UserConfig sharedInstance].logined = NO;
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"accountNum"];
+    //弹出登录
+    [self presentLoginVC];
 }
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
