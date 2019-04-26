@@ -23,8 +23,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     _dataArr = [[NSMutableArray alloc]init];
-    
     _tabelView.tableHeaderView = self.headerView;
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(loginsuccess) name:LoginSuccessNotication object:nil];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -44,8 +44,8 @@
     if (_dataArr.count > 0) {
         [_dataArr removeAllObjects];
     }
-    
-    [_dataArr addObject:@[@{@"name":@"我的积分",@"content":[NSString stringWithFormat:@"%ld",(long)[IntegralTool shareTool].integral]}]];
+    NSMutableDictionary *scoreMuDict = [[NSMutableDictionary alloc]initWithDictionary:@{@"name":@"我的积分",@"content":[NSString stringWithFormat:@"%ld",(long)[IntegralTool shareTool].integral]}];
+    [_dataArr addObject:@[scoreMuDict]];
     [_dataArr addObject:@[@{@"name":@"隐私协议",@"content":@""},@{@"name":@"服务条款",@"content":@""},@{@"name":@"关于",@"content":@""}]];
     [_tabelView reloadData];
 }
@@ -190,10 +190,21 @@
 - (void)logoutAction:(UIButton *)btn
 {
     [UserConfig sharedInstance].logined = NO;
+    [UserConfig cutoutMessage];
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"accountNum"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"integral"];
+    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"isIntegralAlert"];
     //弹出登录
     [self presentLoginVC];
 }
-
-
+- (void)loginsuccess
+{
+    NSMutableDictionary *scoreDict = _dataArr[0][0];
+    [scoreDict setValue:[NSString stringWithFormat:@"%ld",[IntegralTool shareTool].integral] forKey:@"content"];
+    [_tabelView reloadData];
+}
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
+}
 @end

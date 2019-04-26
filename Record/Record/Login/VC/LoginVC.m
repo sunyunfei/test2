@@ -52,6 +52,8 @@
 }
 
 - (IBAction)loginAction {
+    [self.view endEditing:YES];
+    [_passwordF resignFirstResponder];
     if ([self.passwordF.text isEqualToString:@""]){
         [Tool showMBProgressHUDText:HUD Message:@"请输入验证码" Time:2 addView:self.view FrameY:0];
         return;
@@ -85,14 +87,15 @@
 {
     //审核使用
     if ([_accountF.text isEqualToString:@"15501079050"] && [_passwordF.text isEqualToString:@"1111"]) {
-        
         //直接通过
         [UserConfig sharedInstance].logined = YES;
         NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
         [defaultUser setObject:self.accountF.text forKey:@"accountNum"];
         [defaultUser synchronize];
+        [UserConfig sharedInstance].accountNum = self.accountF.text;
         //请求积分
         [[IntegralTool shareTool] requestIntegral];
+        
         if ([self.navigationController popViewControllerAnimated:YES]) {
             [self.navigationController popViewControllerAnimated:YES];
             
@@ -114,8 +117,10 @@
             NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
             [defaultUser setObject:weakSelf.accountF.text forKey:@"accountNum"];
             [defaultUser synchronize];
+            [UserConfig sharedInstance].accountNum = self.accountF.text;
             //请求积分
             [[IntegralTool shareTool] requestIntegral];
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginSuccessNotication object:nil];
             if ([self.navigationController popViewControllerAnimated:YES]) {
                 [self.navigationController popViewControllerAnimated:YES];
                 
@@ -151,11 +156,12 @@
                 [weakSelf.getCodeBtn setTitle:@"验证码" forState:UIControlStateNormal];
                 dispatch_cancel(timer);
             } else {
-                [weakSelf.getCodeBtn setTitle:[NSString stringWithFormat:@"%ld",second] forState:UIControlStateNormal];
+                [weakSelf.getCodeBtn setTitle:[NSString stringWithFormat:@"%ld s",second] forState:UIControlStateNormal];
                 second--;
             }
         });
     });
     dispatch_resume(timer);
 }
+
 @end

@@ -6,7 +6,7 @@
 //  Copyright © 2019 syf. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "RootViewController.h"
 typedef NS_ENUM(NSInteger,urlType) {
     
     PRIVATE,//隐私
@@ -15,7 +15,7 @@ typedef NS_ENUM(NSInteger,urlType) {
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AgreementViewController : UIViewController
+@interface AgreementViewController : RootViewController
 @property (nonatomic,assign)urlType type;
 @end
 

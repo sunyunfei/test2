@@ -178,6 +178,7 @@
                     </view>
                     <connections>
                         <outlet property="accountF" destination="PWu-3l-iWq" id="aRx-nE-1yE"/>
+                        <outlet property="getCodeBtn" destination="HXA-mi-USv" id="y1b-im-vUT"/>
                         <outlet property="passwordF" destination="gsf-QA-bck" id="6pS-qB-FVk"/>
                     </connections>
                 </viewController>

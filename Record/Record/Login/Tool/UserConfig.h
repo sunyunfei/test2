@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property BOOL logined;//是否登录
 +(UserConfig *)sharedInstance;
++(void)cutoutMessage;
 @end
 
 NS_ASSUME_NONNULL_END

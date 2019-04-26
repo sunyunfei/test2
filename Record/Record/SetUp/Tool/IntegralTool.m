@@ -23,7 +23,10 @@
     
     
     NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
-    NSString *accountNum = [defaultUser objectForKey:@"accountNum"];
+    NSString *accountNum = [UserConfig sharedInstance].accountNum;
+    if (!accountNum||accountNum.length==0) {
+        accountNum = [defaultUser objectForKey:@"accountNum"];;
+    }
     if (accountNum == nil || [accountNum isKindOfClass:[NSNull class]] || accountNum.length <= 0) {
         
         return;
@@ -44,7 +47,7 @@
             self.requestSuccess = true;
             BmobObject *obj = [array firstObject];
             self.integral = [[obj objectForKey:@"integral"] integerValue];
-            
+            [[NSNotificationCenter defaultCenter] postNotificationName:LoginSuccessNotication object:nil];
         }else{
             self.requestSuccess = false;
         }

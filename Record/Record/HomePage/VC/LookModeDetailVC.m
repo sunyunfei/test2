@@ -31,7 +31,10 @@
     NSAttributedString *attStr = [[NSAttributedString alloc]initWithString:_contentModel.content];
     YYTextLayout *layout = [YYTextLayout layoutWithContainerSize:CGSizeMake([UIScreen mainScreen].bounds.size.width-30, CGFLOAT_MAX) text:attStr];
     contentH = layout.textBoundingSize.height;
-    [Tool showMBProgressHUDText:HUD Message:@"积分-1" Time:1.7 addView:self.view FrameY:0.0];
+    if (!_isMyContent) {
+        [Tool showMBProgressHUDText:HUD Message:@"积分-1" Time:1.7 addView:self.view FrameY:0.0];
+    }
+   
 }
 
 - (UITableView *)tableView
@@ -55,7 +58,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return contentH+50;
+    return contentH+60;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -63,13 +66,14 @@
     YYTextView *contentT;
     if (!cell) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"identifer"];
-        contentT = [[YYTextView alloc]initWithFrame:CGRectMake(15, 15, [UIScreen mainScreen].bounds.size.width-30, contentH+20)];
+        contentT = [[YYTextView alloc]initWithFrame:CGRectMake(15, 15, [UIScreen mainScreen].bounds.size.width-30, contentH+30)];
         [contentT setFont:[UIFont systemFontOfSize:14]];
         [contentT setTextColor:[UIColor colorWithRed:53/255.0 green:53/255.0 blue:53/255.0 alpha:1.0]];
 //        contentT.numberOfLines = 0;
         contentT.userInteractionEnabled = NO;
         [cell.contentView addSubview:contentT];
     }
+    cell.selectionStyle =UITableViewCellSelectionStyleNone;
     [contentT setText:_contentModel.content];
     return cell;
 }

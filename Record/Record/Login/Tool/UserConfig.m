@@ -17,4 +17,8 @@ static dispatch_once_t userconfigonce;
     });
     return userconfig;
 }
++(void)cutoutMessage
+{
+    userconfigonce = 0;
+}
 @end

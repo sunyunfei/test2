@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface LookModeDetailVC : RootViewController
 @property (nonatomic, strong)HomeContentModel *contentModel;
+@property (nonatomic, assign)BOOL isMyContent;
 @end
 
 NS_ASSUME_NONNULL_END

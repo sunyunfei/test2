@@ -103,39 +103,45 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
     if ([contentModel.mobile isEqualToString:[UserConfig sharedInstance].accountNum]) {
         LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
         detailVC.hidesBottomBarWhenPushed = YES;
+        detailVC.isMyContent = YES;
         detailVC.contentModel = _dataArr[indexPath.section];
         [self.navigationController pushViewController:detailVC animated:YES];
     }else{
         NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-        NSInteger integral = [IntegralTool shareTool].integral;
-        if ([userDefault boolForKey:@"isIntegralAlert"]) {
-            if (integral<=0) {
-                [AlertTool showALertTitle:@"您已经没有积分了，请购买积分" content:@"" showType:oneButton sure:^{
-                    IAPViewController *vc = [[IAPViewController alloc]init];
-                    vc.hidesBottomBarWhenPushed = true;
-                    [self.navigationController pushViewController:vc animated:true];
-                } cancel:^{
-                    
-                }];
-            }else{
+        __block NSInteger integral = [IntegralTool shareTool].integral;
+        if (integral<=0) {
+            [AlertTool showALertTitle:@"您没有积分，请购买积分" content:@"" showType:oneButton sure:^{
+                IAPViewController *vc = [[IAPViewController alloc]init];
+                vc.hidesBottomBarWhenPushed = true;
+                [self.navigationController pushViewController:vc animated:true];
+            } cancel:^{
+                
+            }];
+        }else{
+            if ([userDefault boolForKey:@"isIntegralAlert"]) {
                 integral-=1;
                 [IntegralTool shareTool].integral = integral;
                 [[IntegralTool shareTool]submitIntegral];
                 LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
                 detailVC.hidesBottomBarWhenPushed = YES;
+                detailVC.isMyContent = NO;
                 detailVC.contentModel = _dataArr[indexPath.section];
                 [self.navigationController pushViewController:detailVC animated:YES];
+            }else{
+                [AlertTool showALertTitle:@"温馨提示" content:@"查看别人的心情将消耗您一个积分哦" showType:twoButton sure:^{
+                    integral-=1;
+                    [IntegralTool shareTool].integral = integral;
+                    [userDefault setBool:YES forKey:@"isIntegralAlert"];
+                    [userDefault synchronize];
+                    [[IntegralTool shareTool]submitIntegral];
+                } cancel:^{
+                    
+                }];
             }
-        }else{
-            [AlertTool showALertTitle:@"温馨提示" content:@"查看别人的心情将消耗您一个积分哦" showType:twoButton sure:^{
-                [userDefault setInteger:integral forKey:@"integral"];
-                [userDefault setBool:YES forKey:@"isIntegralAlert"];
-                [userDefault synchronize];
-                [[IntegralTool shareTool]submitIntegral];
-            } cancel:^{
-                
-            }];
         }
+        
+        
+        
     }
 }
 
