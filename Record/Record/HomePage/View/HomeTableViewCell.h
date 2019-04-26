@@ -18,6 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *praiseBtn;
 @property (weak, nonatomic) IBOutlet UIImageView *modeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *priseNumL;
+@property (nonatomic,strong)NSIndexPath *indexPath;
+//刷新
+@property (nonatomic,copy)void (^refreshIndexPath)(NSIndexPath *indexPath);
 - (IBAction)clickPraiseBtn:(UIButton *)sender;
 @property (nonatomic, strong)HomeContentModel *contentModel;
 @end

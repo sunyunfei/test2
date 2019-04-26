@@ -144,6 +144,6 @@ static NSString *iap_cell = @"IAPCell";
     
     _chooseIapModel = chooseIapModel;
     self.priceLabel.text = [NSString stringWithFormat:@"价钱:%@",chooseIapModel.productPrice];
-    self.nameLabel.text = [NSString stringWithFormat:@"%@ = %@",chooseIapModel.productPrice,chooseIapModel.productName];
+    self.nameLabel.text = chooseIapModel.productName;
 }
 @end

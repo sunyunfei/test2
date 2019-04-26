@@ -16,6 +16,7 @@
     NSMutableArray *dataArray = [NSMutableArray array];
     BmobQuery *bquery = [BmobQuery queryWithClassName:@"iap_data"];
     [bquery clearCachedResult];
+    [bquery orderByAscending:@"integral"];
     [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
         
         if (!error) {

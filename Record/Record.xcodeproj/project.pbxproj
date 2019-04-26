@@ -294,8 +294,6 @@
 				05ACC6C52270455400192B97 /* AlertTool.m */,
 				05ACC664226FE60700192B97 /* RootNavigationController.h */,
 				05ACC665226FE60700192B97 /* RootNavigationController.m */,
-				20359D69226FF2B700F82DF5 /* ILNavigationController.h */,
-				20359D6A226FF2B700F82DF5 /* ILNavigationController.m */,
 				20069DD6226EF88400B6916E /* Tool.h */,
 				20069DD7226EF88400B6916E /* Tool.m */,
 				20359D6C226FF44A00F82DF5 /* RootViewController.h */,
@@ -467,7 +465,6 @@
 				20069DDB226F004F00B6916E /* Common.m in Sources */,
 				204B69D122704B6600360EA7 /* HomeDetailHeaderView.m in Sources */,
 				05ACC6C42270439F00192B97 /* IAPViewController+IAPMethod.m in Sources */,
-				20359D6B226FF2B700F82DF5 /* ILNavigationController.m in Sources */,
 				20359D6E226FF44A00F82DF5 /* RootViewController.m in Sources */,
 				20069DD8226EF88400B6916E /* Tool.m in Sources */,
 				055A8DA32270947000E8DD6A /* IntegralTool.m in Sources */,
@@ -653,7 +650,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eg.record;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = record_deve;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -684,7 +681,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.eg.record;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = record_deve;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

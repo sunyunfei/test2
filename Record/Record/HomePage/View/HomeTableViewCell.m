@@ -27,7 +27,7 @@
     //内容
     [self.cntentL setText:_contentModel.content];
     //点赞
-    [self.priseNumL setText:[NSString stringWithFormat:@"%ld",_contentModel.praise]];
+    [self.priseNumL setText:[NSString stringWithFormat:@"%ld",(long)_contentModel.praise]];
     //心情
     switch (contentModel.type) {
         case 0:
@@ -55,5 +55,27 @@
 }
 
 - (IBAction)clickPraiseBtn:(UIButton *)sender {
+    
+    //赞数+1
+    self.contentModel.praise += 1;
+    //开始进行更新
+    BmobObject *obj = [BmobObject objectWithoutDataWithClassName:@"home_content" objectId:self.contentModel.objectId];
+    //设置
+    [obj setObject:@(self.contentModel.praise) forKey:@"praise"];
+    
+    [obj updateInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+        
+        if (isSuccessful) {
+            
+            [Tool showMBProgressHUDText:@"点赞+1" view:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+            if (self.refreshIndexPath) {
+                self.refreshIndexPath(self.indexPath);
+            }
+            
+        }else{
+            
+            [Tool showMBProgressHUDText:@"网络开小差了" view:[UIApplication sharedApplication].keyWindow.rootViewController.view];
+        }
+    }];
 }
 @end

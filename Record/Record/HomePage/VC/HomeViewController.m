@@ -46,7 +46,7 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
         [homepageVC getRequestData:NO];
     }];
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    addBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-75, [UIScreen mainScreen].bounds.size.height-120, 60, 60);
+    addBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-65, [UIScreen mainScreen].bounds.size.height-140, 60, 60);
     [addBtn setImage:[UIImage imageNamed:@"addMode_icon"] forState:UIControlStateNormal];
     addBtn.alpha = 0.8;
     [addBtn addTarget:self action:@selector(addModeaction:) forControlEvents:UIControlEventTouchUpInside];
@@ -81,6 +81,11 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeTableViewCell_identifer];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.contentModel = _dataArr[indexPath.section];
+    cell.indexPath = indexPath;
+    __weak typeof(self)weakSelf = self;
+    cell.refreshIndexPath = ^(NSIndexPath * _Nonnull indexPath) {
+        [weakSelf.tableVew reloadRowAtIndexPath:indexPath withRowAnimation:UITableViewRowAnimationNone];
+    };
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -214,5 +219,7 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
         [homeVC.tableVew.mj_footer endRefreshing];
         [homeVC.tableVew.mj_header endRefreshing];
     }];
+    
 }
+
 @end
