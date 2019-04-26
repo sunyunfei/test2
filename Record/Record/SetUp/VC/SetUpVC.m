@@ -38,7 +38,7 @@
     }else{
         [UserConfig sharedInstance].logined = YES;
         [UserConfig sharedInstance].accountNum = account;
-        self.iphoneNum = account;
+        self.iphoneNum.text = account;
     }
     
     if (_dataArr.count > 0) {
