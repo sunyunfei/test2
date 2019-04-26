@@ -28,7 +28,6 @@
 		05ACC6C42270439F00192B97 /* IAPViewController+IAPMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACC6C32270439F00192B97 /* IAPViewController+IAPMethod.m */; };
 		05ACC6C72270455400192B97 /* AlertTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACC6C52270455400192B97 /* AlertTool.m */; };
 		05ACC6CB2270467600192B97 /* AgreementViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 05ACC6C92270467600192B97 /* AgreementViewController.m */; };
-		05ACC6CC2270467600192B97 /* AgreementViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 05ACC6CA2270467600192B97 /* AgreementViewController.xib */; };
 		200362F1226F3BA800D84860 /* HomeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 200362EF226F3BA800D84860 /* HomeTableViewCell.m */; };
 		20036308226F4A9E00D84860 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 20036307226F4A9E00D84860 /* HomeTableViewCell.xib */; };
 		2003630F226F568100D84860 /* AddModeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 2003630D226F568100D84860 /* AddModeVC.m */; };
@@ -80,7 +79,6 @@
 		05ACC6C62270455400192B97 /* AlertTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertTool.h; sourceTree = "<group>"; };
 		05ACC6C82270467600192B97 /* AgreementViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementViewController.h; sourceTree = "<group>"; };
 		05ACC6C92270467600192B97 /* AgreementViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgreementViewController.m; sourceTree = "<group>"; };
-		05ACC6CA2270467600192B97 /* AgreementViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AgreementViewController.xib; sourceTree = "<group>"; };
 		0BBBF8EC3E74A232BBC4B188 /* Pods-Record.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Record.release.xcconfig"; path = "Target Support Files/Pods-Record/Pods-Record.release.xcconfig"; sourceTree = "<group>"; };
 		200362EE226F3BA800D84860 /* HomeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeTableViewCell.h; sourceTree = "<group>"; };
 		200362EF226F3BA800D84860 /* HomeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeTableViewCell.m; sourceTree = "<group>"; };
@@ -251,7 +249,6 @@
 			isa = PBXGroup;
 			children = (
 				05A1D61C22713ED30009F28D /* AboutViewController.xib */,
-				05ACC6CA2270467600192B97 /* AgreementViewController.xib */,
 				05ACC6B622702BD000192B97 /* IAPViewController.xib */,
 				05ACC6B92270312900192B97 /* IAPCell.h */,
 				05ACC6BA2270312900192B97 /* IAPCell.m */,
@@ -393,7 +390,6 @@
 				05442C37226ED11000814A6A /* LaunchScreen.storyboard in Resources */,
 				20036310226F568100D84860 /* AddModeVC.xib in Resources */,
 				05442C34226ED11000814A6A /* Assets.xcassets in Resources */,
-				05ACC6CC2270467600192B97 /* AgreementViewController.xib in Resources */,
 				20036308226F4A9E00D84860 /* HomeTableViewCell.xib in Resources */,
 				05ACC6BD2270312900192B97 /* IAPCell.xib in Resources */,
 				05442C32226ED10E00814A6A /* Main.storyboard in Resources */,

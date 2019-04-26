@@ -10,9 +10,11 @@
 #import "IAPViewController.h"
 #import "AgreementViewController.h"
 #import "AboutViewController.h"
+#import "LoginVC.h"
 @interface SetUpVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)NSMutableArray *dataArr;
 @property (nonatomic, strong)UIView *headerView;
+@property (nonatomic,weak)UILabel *iphoneNum;
 @end
 
 @implementation SetUpVC
@@ -28,6 +30,16 @@
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
+    
+    NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
+    NSString *account = [defaultUser objectForKey:@"accountNum"];
+    if (!account||account.length==0) {
+        [self presentLoginVC];
+    }else{
+        [UserConfig sharedInstance].logined = YES;
+        [UserConfig sharedInstance].accountNum = account;
+        self.iphoneNum = account;
+    }
     
     if (_dataArr.count > 0) {
         [_dataArr removeAllObjects];
@@ -55,8 +67,36 @@
 //        [iphoneNum setBackgroundColor:[UIColor redColor]];
         [iphoneNum setFont:[UIFont systemFontOfSize:14]];
         [_headerView addSubview:iphoneNum];
+        self.iphoneNum = iphoneNum;
     }
     return _headerView;
+}
+
+//登录
+- (void)presentLoginVC
+{
+    UIStoryboard * story =
+    [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginVC *logVC = [story instantiateViewControllerWithIdentifier:@"LoginVC"];
+    UIViewController *viewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+    /* viewController.presentedViewController只有present才有值，push的时候为nil
+     */
+    
+    //防止重复弹
+    if ([viewController.presentedViewController isKindOfClass:[UINavigationController class]]) {
+        UINavigationController *navigation = (id)viewController.presentedViewController;
+        if ([navigation.topViewController isKindOfClass:[LoginVC class]]) {
+            return;
+        }
+    }
+    if (viewController.presentedViewController) {
+        //要先dismiss结束后才能重新present否则会出现Warning: Attempt to present <UINavigationController: 0x7fdd22262800> on <UITabBarController: 0x7fdd21c33a60> whose view is not in the window hierarchy!就会present不出来登录页面
+        [viewController.presentedViewController dismissViewControllerAnimated:false completion:^{
+            [viewController presentViewController:logVC animated:true completion:nil];
+        }];
+    }else {
+        [viewController presentViewController:logVC animated:true completion:nil];
+    }
 }
 #pragma mark--UITableViewDelegate/UItableViewdatasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -151,6 +191,8 @@
 {
     [UserConfig sharedInstance].logined = NO;
     [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"accountNum"];
+    //弹出登录
+    [self presentLoginVC];
 }
 
 

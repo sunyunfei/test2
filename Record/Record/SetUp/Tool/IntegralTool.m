@@ -28,6 +28,10 @@
         
         return;
     }
+    
+    self.integral = [defaultUser integerForKey:@"integral"];
+    
+    
     self.requestSuccess = false;
     //开始请求
     BmobQuery   *bquery = [BmobQuery queryWithClassName:@"user_integral"];
@@ -43,7 +47,6 @@
             
         }else{
             self.requestSuccess = false;
-            self.integral = 0;
         }
         
     }];
@@ -58,6 +61,9 @@
         
         return;
     }
+    
+    [defaultUser setInteger:self.integral forKey:@"integral"];
+    [defaultUser synchronize];
     
     self.submitSuccess = false;
     //开始请求

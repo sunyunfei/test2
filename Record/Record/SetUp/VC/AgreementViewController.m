@@ -9,7 +9,7 @@
 #import "AgreementViewController.h"
 
 @interface AgreementViewController ()
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic)UIWebView *webView;
 
 @end
 
@@ -17,17 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    
+    self.webView = [[UIWebView alloc]init];
+    self.webView.frame = self.view.bounds;
+    [self.view addSubview:self.webView];
+    
+    if (self.type == PRIVATE) {
+        //https://blog.csdn.net/github_30943901/article/details/89530813
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://blog.csdn.net/github_30943901/article/details/89530813"]]];
+    }else{
+        
+        [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://blog.csdn.net/github_30943901/article/details/89530896"]]];
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

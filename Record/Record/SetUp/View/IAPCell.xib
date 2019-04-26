@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="209" height="71"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-gR-aWW">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="c4" translatesAutoresizingMaskIntoConstraints="NO" id="I8H-gR-aWW">
                         <rect key="frame" x="8" y="25.5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="EC2-rm-bJZ"/>
@@ -27,8 +27,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0XO-YG-dFb">
-                        <rect key="frame" x="36" y="28.5" width="157" height="14"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <rect key="frame" x="28" y="29" width="165" height="13"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -36,7 +36,7 @@
             </view>
             <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="0XO-YG-dFb" firstAttribute="leading" secondItem="I8H-gR-aWW" secondAttribute="trailing" constant="8" id="6Tq-9L-G8F"/>
+                <constraint firstItem="0XO-YG-dFb" firstAttribute="leading" secondItem="I8H-gR-aWW" secondAttribute="trailing" id="6Tq-9L-G8F"/>
                 <constraint firstItem="I8H-gR-aWW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leadingMargin" constant="-8" id="Ffo-s8-Xyg"/>
                 <constraint firstAttribute="trailingMargin" secondItem="0XO-YG-dFb" secondAttribute="trailing" id="di8-xE-ADU"/>
                 <constraint firstItem="I8H-gR-aWW" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="fCF-g3-Zwj"/>
@@ -51,4 +51,7 @@
             <point key="canvasLocation" x="-65.94202898550725" y="94.754464285714278"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="c4" width="256" height="256"/>
+    </resources>
 </document>
