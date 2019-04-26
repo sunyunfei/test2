@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Common : NSObject
 //通知
-#define LoginSuccessNotication                        @"LoginSuccessNotication"//登录
+#define BmobHomeContentTab                        @"home_content"//心情
 @end
 
 NS_ASSUME_NONNULL_END

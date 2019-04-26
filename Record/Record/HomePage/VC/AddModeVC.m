@@ -7,7 +7,7 @@
 //
 
 #import "AddModeVC.h"
-#import <BmobSDK/Bmob.h>
+
 @interface AddModeVC ()<UITextViewDelegate>
 {
     MBProgressHUD *HUD;
@@ -28,7 +28,26 @@
     
 }
 #pragma mark--UITextViewDelegate
-
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    
+    if ([text isEqualToString:@"\n"]) {
+        if (textView.text.length==0) {
+            _placeHolderL.hidden = NO;
+        }
+        [textView resignFirstResponder];
+        return NO;
+    }else{
+        
+        return YES;
+    }
+    
+}
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
+{
+    _placeHolderL.hidden = YES;
+    return YES;
+}
 - (void)textViewDidChange:(UITextView *)textView
 {
     if (textView.text.length>0) {
@@ -45,9 +64,9 @@
         UITextPosition *position = [textView positionFromPosition:selectedRange.start offset:0];
         // 没有高亮选择的字，则对已输入的文字进行字数统计和限制
         if (!position) {
-            if (toBeString.length > 500) {
-                [Tool showMBProgressHUDText:HUD Message:@"不能超过500汉字哦" Time:2.0 addView:self.view FrameY:0.f];
-                textView.text = [toBeString substringToIndex:500];
+            if (toBeString.length > 2000) {
+                [Tool showMBProgressHUDText:HUD Message:@"不能超过2000汉字哦" Time:2.0 addView:self.view FrameY:0.f];
+                textView.text = [toBeString substringToIndex:2000];
             }else{
                 
             }
@@ -99,13 +118,14 @@
         return;
     }
     __weak typeof(HUD)weakHud = HUD;
-    BmobObject*HomeContent = [BmobObject objectWithClassName:@"home_content"];
+    BmobObject*HomeContent = [BmobObject objectWithClassName:BmobHomeContentTab];
     [HomeContent setObject:_contentTF.text forKey:@"content"];
     [HomeContent setObject:[NSNumber numberWithInteger:modetype] forKey:@"type"];
     [HomeContent setObject:[NSNumber numberWithInteger:0] forKey:@"praise"];
     [HomeContent setObject:[UserConfig sharedInstance].accountNum forKey:@"mobile"];
     NSDate *nowdate = [NSDate new];
     NSDateFormatter *formater = [[NSDateFormatter alloc]init];
+    [formater setDateFormat:@"yyyy-MM-dd HH:mm"];
     NSString *dateStr = [formater stringFromDate:nowdate];
     [HomeContent setObject:dateStr forKey:@"date"];
     //异步保存到服务器
@@ -113,6 +133,10 @@
         if (isSuccessful) {
             //创建成功后会返回objectId，updatedAt，createdAt等信息
             [Tool showMBProgressHUDText:weakHud Message:@"发布成功~" Time:2.0 addView:self.view FrameY:0.0];
+            if (self.AddModeVCBlock) {
+                self.AddModeVCBlock();
+            }
+            [self performSelector:@selector(backBefore) withObject:self afterDelay:1.4];
         } else if (error){
             //发生错误后的动作
             NSLog(@"%@",error);

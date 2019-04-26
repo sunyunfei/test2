@@ -10,6 +10,8 @@
 #import "LoginVC.h"
 #import "HomeTableViewCell.h"
 #import "AddModeVC.h"
+#import "HomeContentModel.h"
+#import "LookModeDetailVC.h"
 static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 @interface HomeViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong)UITableView *tableVew;
@@ -22,6 +24,7 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    _dataArr = [[NSMutableArray alloc]init];
     NSUserDefaults *defaultUser = [NSUserDefaults standardUserDefaults];
     NSString *account = [defaultUser objectForKey:@"accountNum"];
     if (!account||account.length==0) {
@@ -32,15 +35,22 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
     }
     [self.view addSubview:self.tableView];
     
+    //请求网络数据
+    __weak HomeViewController *homepageVC = self;
+    self.tableVew.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        [homepageVC getRequestData:YES];
+    }];
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
+        [homepageVC getRequestData:NO];
+    }];
     UIButton *addBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     addBtn.frame = CGRectMake([UIScreen mainScreen].bounds.size.width-75, [UIScreen mainScreen].bounds.size.height-120, 60, 60);
     [addBtn setImage:[UIImage imageNamed:@"addMode_icon"] forState:UIControlStateNormal];
     addBtn.alpha = 0.8;
     [addBtn addTarget:self action:@selector(addModeaction:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:addBtn];
-    
+    [homepageVC getRequestData:YES];
 }
-
 - (UITableView *)tableView
 {
     if (!_tableVew) {
@@ -58,7 +68,7 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 #pragma mrk--UITableViewdelegate/datasource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 10;
+    return _dataArr.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -68,6 +78,7 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 {
     HomeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HomeTableViewCell_identifer];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.contentModel = _dataArr[indexPath.section];
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -85,6 +96,10 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    LookModeDetailVC *detailVC = [[LookModeDetailVC alloc]init];
+    detailVC.hidesBottomBarWhenPushed = YES;
+    detailVC.contentModel = _dataArr[indexPath.section];
+    [self.navigationController pushViewController:detailVC animated:YES];
 }
 //登录
 - (void)presentLoginVC
@@ -117,6 +132,41 @@ static NSString *HomeTableViewCell_identifer = @"HomeTableViewCell_identifer";
 {
     AddModeVC *addVC = [[AddModeVC alloc]init];
     addVC.hidesBottomBarWhenPushed = YES;
+    addVC.AddModeVCBlock = ^{
+        [self getRequestData:YES];
+    };
     [self.navigationController pushViewController:addVC animated:YES];
+}
+#pragma mark--获取数据
+- (void)getRequestData:(BOOL)isHeader
+{
+    __weak typeof(HomeViewController)*homeVC = self;
+    BmobQuery*bquery = [BmobQuery queryWithClassName:BmobHomeContentTab];
+    bquery.limit = 10;
+    if (isHeader) {
+        [_dataArr removeAllObjects];
+    }
+    if (_dataArr.count>=10) {
+        bquery.skip = _dataArr.count;
+    }
+    //查找GameScore表的数据
+    [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        for (BmobObject *obj in array) {
+            HomeContentModel *contentModel = [[HomeContentModel alloc]init];
+            contentModel.objectId = [obj objectId];
+            contentModel.mobile = [obj objectForKey:@"mobile"];
+            contentModel.content = [obj objectForKey:@"content"];
+            contentModel.type = [[obj objectForKey:@"type"]integerValue];
+            contentModel.date = [obj objectForKey:@"date"];
+            contentModel.praise = [[obj objectForKey:@"praise"]integerValue];
+            [homeVC.dataArr addObject:contentModel];
+        }
+        [homeVC.tableVew reloadData];
+        if (array.count<10) {
+            homeVC.tableVew.mj_footer.hidden = YES;
+        }
+        [homeVC.tableVew.mj_footer endRefreshing];
+        [homeVC.tableVew.mj_header endRefreshing];
+    }];
 }
 @end

@@ -207,7 +207,7 @@
         <!--首页-->
         <scene sceneID="tGP-51-0ns">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LU2-AY-PwB" customClass="RootNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LU2-AY-PwB" customClass="ILNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="首页" image="HomeIcon_noselect" selectedImage="HomeIcon_select" id="Xqr-TD-17y"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ian-fT-V08">
@@ -267,7 +267,7 @@
         <!--设置-->
         <scene sceneID="BTP-bW-LwF">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXY-bj-9CI" customClass="RootNavigationController" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mXY-bj-9CI" customClass="ILNavigationController" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="设置" image="SetUp_noselect" selectedImage="SetUp_select" id="ql7-Wt-hVW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4BP-I2-Gjc">

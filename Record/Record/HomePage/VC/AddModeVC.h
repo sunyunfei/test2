@@ -15,9 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *placeHolderL;
 - (IBAction)BadModeAction:(UIButton *)sender;
 - (IBAction)submitAction;
-
-
-
+@property (nonatomic, copy)void (^AddModeVCBlock)();
 @end
 
 NS_ASSUME_NONNULL_END

@@ -57,11 +57,11 @@
                             <visualEffectView opaque="NO" alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kMC-NJ-Cl3">
                                 <rect key="frame" x="17" y="50" width="266" height="63.5"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="qvP-vT-F4b">
-                                    <rect key="frame" x="0.0" y="0.0" width="266" height="63.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="266" height="63"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击查看" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Okm-Wr-FXf">
-                                            <rect key="frame" x="0.0" y="0.0" width="266" height="63"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="266" height="63.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
@@ -96,7 +96,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="badMode_icon_" translatesAutoresizingMaskIntoConstraints="NO" id="DPO-Mv-3qg">
-                                <rect key="frame" x="96" y="119.5" width="20" height="20"/>
+                                <rect key="frame" x="89" y="119.5" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="AO8-b5-op9"/>
                                     <constraint firstAttribute="height" constant="20" id="mDD-pu-wOT"/>
@@ -130,7 +130,7 @@
                             <constraint firstAttribute="bottom" secondItem="NgX-xp-ADQ" secondAttribute="bottom" constant="8" id="ZQd-5p-0A3"/>
                             <constraint firstAttribute="trailing" secondItem="AIY-pF-qRm" secondAttribute="trailing" constant="17" id="hcV-Pn-LOs"/>
                             <constraint firstItem="jg2-nO-13U" firstAttribute="leading" secondItem="3nk-Pa-PIB" secondAttribute="leading" id="i0t-4P-vkL"/>
-                            <constraint firstItem="DPO-Mv-3qg" firstAttribute="leading" secondItem="TzM-Yy-6Eh" secondAttribute="trailing" constant="15" id="iWE-1X-GHk"/>
+                            <constraint firstItem="DPO-Mv-3qg" firstAttribute="leading" secondItem="TzM-Yy-6Eh" secondAttribute="trailing" constant="8" id="iWE-1X-GHk"/>
                             <constraint firstItem="kMC-NJ-Cl3" firstAttribute="top" secondItem="AIY-pF-qRm" secondAttribute="top" id="mLV-Ak-L7s"/>
                             <constraint firstAttribute="trailing" secondItem="NgX-xp-ADQ" secondAttribute="trailing" constant="16" id="o9H-6Q-Yh5"/>
                             <constraint firstItem="AIY-pF-qRm" firstAttribute="top" secondItem="jg2-nO-13U" secondAttribute="bottom" id="wGj-x3-C15"/>
@@ -149,7 +149,9 @@
             <connections>
                 <outlet property="cntentL" destination="AIY-pF-qRm" id="oRp-j1-7nc"/>
                 <outlet property="iphoneNumL" destination="0HQ-a3-TCd" id="L2K-9S-mzJ"/>
+                <outlet property="modeImageView" destination="DPO-Mv-3qg" id="BkR-eC-1EJ"/>
                 <outlet property="praiseBtn" destination="AmS-bw-7an" id="pZ2-bB-AFy"/>
+                <outlet property="priseNumL" destination="TzM-Yy-6Eh" id="m0L-7B-nIh"/>
                 <outlet property="subsViews" destination="3nk-Pa-PIB" id="Do0-C3-cQG"/>
                 <outlet property="timeL" destination="NgX-xp-ADQ" id="hCF-8u-kqm"/>
             </connections>

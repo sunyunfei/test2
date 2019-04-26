@@ -9,16 +9,17 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
-
+@class HomeContentModel;
 @interface HomeTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *iphoneNumL;
 @property (weak, nonatomic) IBOutlet UILabel *timeL;
 @property (weak, nonatomic) IBOutlet UITextView *cntentL;
 @property (weak, nonatomic) IBOutlet UIView *subsViews;
 @property (weak, nonatomic) IBOutlet UIButton *praiseBtn;
-@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *modeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *priseNumL;
 - (IBAction)clickPraiseBtn:(UIButton *)sender;
-
+@property (nonatomic, strong)HomeContentModel *contentModel;
 @end
 
 NS_ASSUME_NONNULL_END

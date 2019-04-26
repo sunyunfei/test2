@@ -194,6 +194,19 @@
     }
     else return NO;
 }
++ (NSString *)idNumberReplaceSecret:(NSString *)idNumber {
+    if (!idNumber || idNumber.length == 0 || idNumber.length > 11) {
+        return @"";
+    }
+    NSMutableAttributedString *secret = [[NSMutableAttributedString alloc]init];
+    
+    for (int i = 4; i < 8; i++) {
+        [secret appendString:@"*"];
+    }
+    
+    NSMutableString *string = [[NSMutableString alloc]initWithString:[idNumber stringByReplacingCharactersInRange:NSMakeRange(4, idNumber.length-7) withString:secret.string]];
+    return string;
+}
 +(NSString*)toCompactString:(NSDictionary *)dic
 {
     NSData *data = [NSJSONSerialization dataWithJSONObject:dic options:0 error:nil];

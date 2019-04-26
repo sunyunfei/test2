@@ -8,4 +8,6 @@ target 'Record' do
   pod 'MBProgressHUD'
   pod 'IAPHelper'
   pod 'BmobSDK'
+  pod 'MJRefresh'
+  pod 'YYKit'
 end

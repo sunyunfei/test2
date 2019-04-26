@@ -12,4 +12,7 @@
 #import "Tool.h"
 #import "Common.h"
 #import "UserConfig.h"
+#import "MJRefresh.h"
+#import "YYKit.h"
+#import <BmobSDK/Bmob.h>
 #endif /* PrefixHeader_pch */
